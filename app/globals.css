@@ -42,6 +42,7 @@ hanko-auth::part(input),
 hanko-profile::part(input) {
   background-color: #ffffff;
   margin-bottom: 12px;
+  color: #111827;
 }
 
 hanko-auth::part(secondary-button) {
