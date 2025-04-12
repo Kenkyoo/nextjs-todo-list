@@ -56,8 +56,7 @@ DATABASE_URL=postgresql://...
 NEXT_PUBLIC_HANKO_API_URL=https://...
 
 📸 Capturas
-
-    ![alt text](https://github.com/Kenkyoo/nextjs-todo-list/blob/main/public/background.png?raw=true)
+    ![screenshot](public/background.png)
 
 🔗 Enlaces
 
