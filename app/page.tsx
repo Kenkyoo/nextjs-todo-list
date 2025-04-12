@@ -1,103 +1,72 @@
+import { features } from "@/features/features";
+import { ListBulletIcon } from "@heroicons/react/24/solid";
+import { Footer } from "@/components/footer";
 import Image from "next/image";
+import Background from "../public/background.png";
+import "animate.css";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <>
+      <div className="flex justify-center items-center justify-items-center gap-2 bg-base-200 pt-5">
+        <ListBulletIcon className="size-12 text-primary" />
+        <h1 className="text-5xl font-bold text-center ">To-do App</h1>
+      </div>
+      <div className="overflow-hidden bg-base-200 py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+            <div className="lg:pt-4 lg:pr-8">
+              <div className="lg:max-w-lg">
+                <h2 className="text-base/7 font-semibold text-indigo-600">
+                  Hecha con tecnologías modernas
+                </h2>
+                <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty  sm:text-5xl">
+                  Una app de tareas simple y funcional
+                </p>
+                <p className="mt-6 text-lg/8">
+                  Esta aplicación fue desarrollada con Next.js y Prisma, usando
+                  SQLite como base de datos. Permite gestionar múltiples listas
+                  de tareas, personalizar el tema visual y autenticar usuarios
+                  mediante Hanko. Todo el contenido se guarda en la nube de
+                  forma segura.
+                </p>
+                <dl className="mt-10 max-w-xl space-y-8 text-base/7 lg:max-w-none">
+                  {features.map((feature) => (
+                    <div key={feature.name} className="relative pl-9">
+                      <dt className="inline font-semibold">
+                        <feature.icon
+                          aria-hidden="true"
+                          className="absolute top-1 left-1 size-5 text-indigo-600"
+                        />
+                        {feature.name}
+                      </dt>{" "}
+                      <dd className="inline">{feature.description}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            </div>
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              alt="Product screenshot"
+              src={Background}
+              width={2432}
+              height={1442}
+              className="w-[48rem] max-w-none rounded-xl ring-1 shadow-xl ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0 animate__animated animate__fadeInDown"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
+          <div className="text-center mt-2">
+            <p className="py-6">
+              Inicia sesión o registrate para comenzar a usar la aplicación.
+            </p>
+            <button className="btn btn-primary">
+              <a href="/login" className="link link-hover">
+                Get Started
+              </a>
+            </button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 }

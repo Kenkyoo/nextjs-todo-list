@@ -1,0 +1,16 @@
+export const themes = [
+  "default",
+  "dark",
+  "cupcake",
+  "bumblebee",
+  "emerald",
+  "corporate",
+  "synthwave",
+  "halloween",
+  "forest",
+  "luxury",
+  "dracula",
+  "night",
+  "coffee",
+  "winter",
+];
